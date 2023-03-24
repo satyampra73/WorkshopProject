@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String query = "CREATE TABLE " + Table_name + " (" + PersonId + " INTEGER PRIMARY KEY AUTOINCREMENT, " + PersonMobile + " TEXT, "
-               +PersonName + PersonPassword + " TEXT);";
+                + PersonPassword + " TEXT);";
         sqLiteDatabase.execSQL(query);
     }
 
