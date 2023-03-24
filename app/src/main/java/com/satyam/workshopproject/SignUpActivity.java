@@ -3,6 +3,7 @@ package com.satyam.workshopproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -45,5 +46,10 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void GoToLogin(View view) {
+        Intent intent=new Intent(SignUpActivity.this,MainActivity.class);
+        startActivity(intent);
     }
 }
