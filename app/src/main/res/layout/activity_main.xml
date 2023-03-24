@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ltTop"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/layout_bg_purple"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login_card"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_below="@id/ltTop"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="-220dp"
+        android:layout_marginEnd="30dp"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="70dp"
+                android:layout_height="45dp"
+                android:paddingStart="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Email"
+                android:drawableStart="@drawable/person_svg"
+                android:textSize="14sp"
+                android:drawablePadding="10dp"
+                android:background="@drawable/rectangle_corner_bg"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="45dp"
+                android:paddingStart="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Password"
+                android:drawableStart="@drawable/lock_svg"
+                android:textSize="14sp"
+                android:drawablePadding="10dp"
+                android:background="@drawable/rectangle_corner_bg"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password ? "
+                android:textColor="@color/pink"
+                android:layout_marginStart="15dp"
+                android:onClick="GoToForget"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_bg"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="2dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/btnLogin"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="By Continuing you agree to the "
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/txtTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Terms Of Services "
+                        android:textColor="@color/purple"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="&amp;"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtPrivacyPolicy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Privacy Policy"
+                    android:textColor="@color/purple"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Registered Yet? "
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register Now"
+                    android:onClick="GoToRegister"
+                    android:textColor="@color/pink"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ltTop"
+        android:layout_marginTop="-270dp"
+        app:cardCornerRadius="90dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/person_svg"
+                app:tint="@color/white"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_login_logo"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
