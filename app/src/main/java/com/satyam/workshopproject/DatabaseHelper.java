@@ -2,6 +2,7 @@ package com.satyam.workshopproject;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -15,11 +16,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private Context context;
     private static final String DatabaseName = "BookLibrary.db";
     private static final int DatabaseVersion = 1;
-    private static final String Table_name = "my_library";
+    private static final String Table_name = "users";
     private static final String PersonId = "_id";
     private static final String PersonMobile = "person_mobile";
     private static final String PersonPassword = "person_Password";
-    private static final String PersonName = "Name";
+//    private static final String PersonName = "Name";
 
 
     DatabaseHelper(Context context) {
@@ -55,8 +56,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    void matchData(String personMobile, String password){
-
+    boolean matchData(String personMobile, String password){
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        Cursor cursor = MyDatabase.rawQuery("Select * from users where "+PersonMobile+" = ? and "+PersonPassword+" = ?", new String[]{personMobile, password});
+        if (cursor.getCount() > 0) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
 
